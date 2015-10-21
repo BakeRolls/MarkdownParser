@@ -49,10 +49,8 @@ class MarkdownParser {
 
 		let text = this.text;
 
-		for(let link of this.elements.links) {
-			console.log(this.generateLink(link))
+		for(let link of this.elements.links)
 			text = this.replace(text, link.index, link.found.length, this.generateLink(link));
-		}
 
 		this.elements.links.reverse();
 
