@@ -12,8 +12,8 @@ Parse and edit markdown with JS. Currently only working with links and headlines
 let element = document.querySelector('pre');
 let parser = new MarkdownParser(element.innerHTML);
 
-for(let link of parser.elements.links)
-    if(!link.alt) link.alt = 'Purrr';
+for(let link of parser.get('links'))
+	if(!link.alt) link.alt = 'Purrr';
 
 element.innerHTML = parser.render();
 ```

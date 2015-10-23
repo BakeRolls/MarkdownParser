@@ -22,8 +22,6 @@ class MarkdownParser {
 		for(let element of Object.keys(this.regex)) {
 			let match;
 
-			//this.elements[element] = [];
-
 			while(match = this.regex[element].regex.exec(this.text)) {
 				let parts = {
 					type: element,
@@ -33,14 +31,11 @@ class MarkdownParser {
 				for(let part of Object.keys(this.regex[element].parts))
 					parts[part] = match[this.regex[element].parts[part]];
 
-				//this.elements[element].push(parts);
 				this.elements.push(parts);
 			}
 		}
 
-		this.elements.sort(function(a, b) {
-			return a.index > b.index;
-		});
+		this.elements.sort((a, b) => a.index > b.index);
 	}
 
 	generateTag(tag) {
@@ -70,9 +65,7 @@ class MarkdownParser {
 	}
 
 	get(type) {
-		return this.elements.filter(function(a) {
-			return a.type == type;
-		})
+		return this.elements.filter(a => a.type == type);
 	}
 
 	render() {
