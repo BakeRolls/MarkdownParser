@@ -37,7 +37,7 @@ class MarkdownParser {
 			}
 		}
 
-		this.elements.sort((a, b) => a.index > b.index);
+		this.elements.sort((a, b) => a.index < b.index);
 	}
 
 	generateTag(tag) {
@@ -71,14 +71,10 @@ class MarkdownParser {
 	}
 
 	render() {
-		this.elements.reverse();
-
 		let text = this.text;
 
 		for(let element of this.elements)
 			text = this.replace(text, element.index, element.found.length, this.generateTag(element));
-
-		this.elements.reverse();
 
 		return text;
 	}
