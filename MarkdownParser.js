@@ -1,3 +1,5 @@
+'use strict';
+
 class MarkdownParser {
 	constructor(text) {
 		this.text = text;
@@ -43,7 +45,7 @@ class MarkdownParser {
 
 		switch(tag.type) {
 			case 'links':
-				md  = '[' + tag.text + '](' + tag.url;
+				md  = '[' + tag.text + '](' + tag.url.trim();
 				md += (tag.alt) ? ' "' + tag.alt + '"' : '';
 				md += ')';
 				break;
