@@ -1,6 +1,6 @@
 # MarkdownParser
 
-Parse and edit markdown with JS. Currently only working with links.
+Parse and edit markdown with JS. Currently only working with links and headlines.
 
 ## Example
 
