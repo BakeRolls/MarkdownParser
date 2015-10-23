@@ -58,10 +58,6 @@ class MarkdownParser {
 		return md;
 	}
 
-	generateHeadline(headline) {
-		return headline.level + ' ' + headline.text;
-	}
-
 	replace(string, index, length, substitute) {
 		return string.substring(0, index) + substitute + string.substring(index + length);
 	}
